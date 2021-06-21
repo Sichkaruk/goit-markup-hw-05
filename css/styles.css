@@ -166,6 +166,8 @@ p {
 .header .link:hover,
 .header .link:focus {
   color: var(--pretty-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo {
@@ -194,10 +196,7 @@ p {
   position: relative;
 }
 
-.nav__list__item .link .current {
-  color: #2196f3;
-}
-.link .current {
+.nav__list__item .link.current {
   color: var(--pretty-color);
 }
 
@@ -211,24 +210,6 @@ p {
   background-color: var(--pretty-color);
   border-radius: 2px;
 }
-
-/* .nav-list a {
-  position: relative;
-}
-
-.current {
-  color: var(--pretty-color);
-}
-.current::after {
-  position: absolute;
-  left: 0;
-  bottom: -1%;
-  content: "";
-  width: 100%;
-  border: 2px solid;
-  border-radius: 2px;
-  background-color: var(--pretty-color);
-} */
 
 /* Header */
 
@@ -286,6 +267,58 @@ p {
 .button-hero:hover,
 .button-hero:focus {
   background-color: var(--pretty-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--white-color);
+  padding: 9px;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.close-button {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--background-color);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close {
+  fill: var(--while-color);
 }
 
 /* Hero */
@@ -364,12 +397,36 @@ p {
 
 .our-work-list {
   display: block;
+  position: relative;
 }
 
 .our-work-list:not(:last-child) {
   margin-right: 30px;
 }
 
+.our-work-img {
+  display: block;
+}
+
+.proccess.text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: var(--white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+}
 /* Our-work */
 
 /* Our Team */
@@ -461,6 +518,8 @@ p {
 .our-team-icon .icon-link:focus {
   background-color: var(--pretty-color);
   fill: var(--white-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Our Team */
@@ -498,12 +557,16 @@ p {
 .clients-list-link:hover,
 .clients-list-link:focus {
   border-color: var(--pretty-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list-item a:hover svg,
 .clients-list-item a:focus svg {
   color: var(--pretty-color);
   fill: var(--pretty-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Regular clients */
@@ -607,6 +670,8 @@ p {
 .footer-list .footer-link:hover,
 .footer-list .footer-link:focus {
   background-color: var(--pretty-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Footer */
@@ -650,6 +715,8 @@ p {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Filters */
@@ -672,6 +739,8 @@ p {
 .project__card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project__card:nth-child(-n + 3) {
@@ -704,6 +773,49 @@ p {
 .project__card__text {
   align-items: center;
   padding: 20px 24px;
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 370px;
+}
+
+.overlay {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 370px;
+  height: 294px;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay-text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  width: 322px;
+  height: 168px;
+  align-items: center;
+  margin: 0;
+  color: var(--white-color);
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+.project__link:hover .overlay,
+.project__link:focus .overlay {
+  transform: translateY(0);
 }
 
 /* projects */
